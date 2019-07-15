@@ -1,0 +1,38 @@
+{
+  "name": "ohg",
+  "version": "0.0.1",
+  "description": "A simple CLI scaffolding for git.",
+  "main": "index.js",
+  "bin": {
+    "ohg": "bin/ohg"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "didyoumean": "^1.2.1",
+    "inquirer": "^6.5.0",
+    "shelljs": "^0.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosout/ohg.git"
+  },
+  "keywords": [
+    "cli",
+    "scaffold",
+    "git"
+  ],
+  "author": "Wei Changhua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sosout/ohg/issues"
+  },
+  "homepage": "https://github.com/sosout/ohg#readme"
+}
+

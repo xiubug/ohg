@@ -29,12 +29,12 @@ program
   .usage('<command> [options]')
 
 program
-  .command('create')
+  .command('branch')
   .description('A simple CLI scaffolding for git.')
   .action(cmd => {
     const options = cleanArgs(cmd)
 
-    require('../lib/create')(options)
+    require('../lib/branch')(options)
   })
 
 // 输出未知命令的帮助信息

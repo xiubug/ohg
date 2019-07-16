@@ -13,12 +13,12 @@ $ npm install ohg -g
 
 ### Usage
 ```
-$ ohg branch
+$ ohg fix
 ```
 
 ### Command
 
 * `ohg` or `ohg -h` --- find help info for iboy.
-* `ohg branch` --- Pull remote branches to local or Push local branch to remote
-    - `Pull` --- Pull remote branches to local to fix problems with specified branches in the production environment.
+* `ohg fix` --- Pull remote branch to local or Push local branch to remote
+    - `Pull` --- Pull remote branch to local to fix problems with specified branch in the production environment.
     - `Push` --- Push local branch to remote for development and execution of git commit completion in the production environment.

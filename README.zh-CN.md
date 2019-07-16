@@ -13,12 +13,12 @@ $ npm install ohg -g
 
 ### 用法
 ```
-$ ohg branch
+$ ohg fix
 ```
 
 ### 基本命令
 
 * `ohg` or `ohg -h` --- 查看 ohg 的帮助信息
-* `ohg branch` --- 拉取远程分支到本地/推送本地分支到远程
+* `ohg fix` --- 拉取远程分支到本地/推送本地分支到远程
     - `Pull` --- 用于修复生产环境指定分支问题时，拉取远程分支到本地
     - `Push` --- 用于开发完成且执行git commit完成，推送本地分支到远程

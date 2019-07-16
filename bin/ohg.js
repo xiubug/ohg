@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const didYouMean = require('didyoumean')
 const program = require('commander')
 
-// enhance common error messages
+// 常见错误消息
 const enhanceErrorMessages = require('../util/enhanceErrorMessages')
 
 enhanceErrorMessages('missingArgument', argName => {
@@ -21,7 +21,7 @@ enhanceErrorMessages('optionMissingArgument', (option, flag) => {
   )
 })
 
-// Setting edit distance to 60% of the input string's length
+// 将编辑距离设置为输入字符串长度的 60%
 didYouMean.threshold = 0.6
 
 program
@@ -37,7 +37,7 @@ program
     require('../lib/create')(options)
   })
 
-// output help information on unknown commands
+// 输出未知命令的帮助信息
 program
   .arguments('<command>')
   .action((cmd) => {
@@ -47,7 +47,7 @@ program
     suggestCommands(cmd)
   })
 
-// add some useful info on help
+// 添加一些有关帮助的有用信息
 program.on('--help', () => {
   console.log()
   console.log(`  Run ${chalk.cyan(`ohu <command> --help`)} for detailed usage of given command.`)
@@ -77,14 +77,12 @@ function camelize (str) {
   return str.replace(/-(\w)/g, (_, c) => c ? c.toUpperCase() : '')
 }
 
-// commander passes the Command object itself as options,
-// extract only actual options into a fresh object.
+// commander 将 the Command object itself 作为 options，将 options 组装成新对象返回
 function cleanArgs (cmd) {
   const args = {}
   cmd.options.forEach(o => {
     const key = camelize(o.long.replace(/^--/, ''))
-    // if an option is not present and Command has a method with the same name
-    // it should not be copied
+    // 如果选项不存在且 Command 具有相同名称的方法，则不复制该选项
     if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
       args[key] = cmd[key]
     }
